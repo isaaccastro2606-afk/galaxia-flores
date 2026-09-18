@@ -22,7 +22,6 @@ export default function App() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Ajuste dinámico de escala según tamaño de pantalla
     const isMobile = window.innerWidth < 768;
     const galaxyRadius = Math.min(window.innerWidth, window.innerHeight) * (isMobile ? 0.42 : 0.55);
 
@@ -57,15 +56,15 @@ export default function App() {
       });
     }
 
-    // Frases Flotantes (fuentes adaptadas a móvil)
+    // TUS 7 FRASES PERSONALIZADAS 🩵
     const phrases = [
-      "Contigo todo es mejor",
-      "Gracias por ser mi sol",
-      "Eres mi lugar favorito",
-      "Apareces cuando más me haces falta",
+      "Cuídate mucho siempre",
+      "Siempre voy a estar orgulloso de ti",
+      "Te mereces todo lo bonito",
+      "Siempre serás el amor de mi vida",
       "No necesito un motivo para quererte",
-      "Un girasol y un tulipán para ti",
-      "Mi galaxia favorita eres tú"
+      "Siempre puedes contar con mi apoyo",
+      "Gracias por siempre haber estado para mí"
     ];
 
     const floatingTexts = phrases.map((text, idx) => ({
@@ -254,10 +253,11 @@ export default function App() {
             </h1>
           </header>
 
-          <footer className="text-center mb-6 md:mb-8 pointer-events-auto">
+          {/* BOTÓN REUBICADO MÁS ARRIBA EN PANTALLAS MÓVILES */}
+          <footer className="text-center mb-24 md:mb-12 pointer-events-auto">
             <button
               onClick={() => setShowCard(true)}
-              className="px-5 py-2.5 md:px-6 md:py-3 rounded-full bg-amber-500/20 hover:bg-amber-500/40 border border-amber-400/50 text-amber-200 text-xs md:text-sm tracking-widest uppercase transition-all duration-300 backdrop-blur-md flex items-center gap-2 mx-auto"
+              className="px-6 py-3 rounded-full bg-amber-500/20 hover:bg-amber-500/40 border border-amber-400/50 text-amber-200 text-xs md:text-sm tracking-widest uppercase transition-all duration-300 backdrop-blur-md flex items-center gap-2 mx-auto shadow-lg shadow-amber-500/10 active:scale-95"
             >
               <Heart className="w-4 h-4 fill-amber-300 text-amber-300" />
               Abrir Mensaje
@@ -291,7 +291,7 @@ export default function App() {
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.target.onerror = null; 
-                  e.target.src="foto.jpg";
+                  e.target.src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=400";
                 }}
               />
             </div>
